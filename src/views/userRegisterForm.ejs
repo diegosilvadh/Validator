@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Formulario de Registración</h2>
+    <form method="POST" action="/user/register">
+        <div>
+            <label for=""><b>Nombre Completo:</b></label>
+            <input type="text" name="fullName">
+        </div>
+        <div>
+            <label for=""><b>Correo Electrónico:</b></label>
+            <input type="email" name="email">
+        </div>
+        <div>
+            <label for=""><b>Password:</b></label>
+            <input type="password" name="password">
+        </div>
+        <div>
+            <label for=""><b>País de Nacimiento:</b></label>
+            <select name="country">
+                <option value="">Elegí un País</option>
+                <% countries.forEach(country => { %> 
+                    <option value="<%= country.countryName %>"><%= country.countryName %></option>
+                <%});%>
+            </select>    
+        </div>
+        <div>
+            <label for=""><b>Imágen de Perfil:</b></label>
+            <input type="file" name="avatar">
+        </div>
+        <div>
+            <button type="Send">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>
